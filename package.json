@@ -1,7 +1,5 @@
 {
   "name": "flatstack",
-  "private": true,
-  "version": "1.0.0",
   "scripts": {
     "watch": "webpack-dev-server --env.mode=development",
     "build": "webpack --env.mode=production"
