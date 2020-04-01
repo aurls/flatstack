@@ -1,0 +1,65 @@
+@import "../../assets/styles/constants";
+
+.header {
+  background: white;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 12px 0;
+  max-width: 700px;
+}
+
+.header__title {
+  display: flex;
+}
+
+.header__title-logo {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.header__title-text {
+  font-size: 18px;
+  color: #5a1094;
+}
+
+.header__cart {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header__cart-title {
+  font-size: 15px;
+  text-transform: lowercase;
+  color: #c90ea5;
+}
+
+.header__cart-icon {
+  width: 20px;
+  height: 16px;
+  margin-left: 5px;
+  margin-right: 8px;
+}
+
+.header__cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  background: #ff1876;
+  font-size: 9px;
+  color: white;
+
+  & span {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+  }
+}

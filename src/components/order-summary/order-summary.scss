@@ -1,0 +1,55 @@
+@import "../../assets/styles/constants";
+
+.order-summary {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order-summary__title {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $accentColor;
+}
+
+.order-summary__edit-order {
+  align-self: flex-start;
+  margin-top: 2px;
+  margin-left: auto;
+  border-bottom: 1px solid #979797;
+  font-size: 12px;
+  text-transform: lowercase;
+  color: #979797;
+
+  &:hover {
+    border-color: #6b6b6b;
+    color: #6b6b6b;
+    transition: all $standardTransition;
+  }
+}
+
+.order-summary__items {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.order-summary__invoice {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  color: #777879;
+}
+
+.order-summary__invoice > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.order-summary__invoice-total {
+  border-top: 1px solid #e3e3e3;
+  padding-top: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #431c5d;
+}

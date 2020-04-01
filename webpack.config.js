@@ -38,6 +38,7 @@ module.exports = (env) => {
 
   return {
     mode: isDevelopment ? 'development' : 'production',
+    devtool: isDevelopment ? 'inline-source-map' : 'source-map',
     entry: './src/index.js',
     output: {
       path: Path.join(__dirname, 'dist'),
@@ -63,6 +64,24 @@ module.exports = (env) => {
         {
           test: /\.(sass|scss)$/,
           use: getStyleLoaders()
+        },
+        // Loading images
+        {
+          test: /\.(jpg|jpeg|png|gif|svg)$/,
+          loader: 'file-loader',
+          options: {
+            outputPath: './images',
+            filename: '[name]-[hash:5].[ext]'
+          }
+        },
+        // Loading fonts
+        {
+          test: /\.(woff|woff2|ttf)$/,
+          loader: 'file-loader',
+          options: {
+            outputPath: './fonts',
+            filename: '[name]-[hash:5].[ext]'
+          }
         }
       ]
     }
