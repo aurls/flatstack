@@ -1,0 +1,128 @@
+@import "../../assets/styles/constants";
+
+.order-select {
+  position: relative;
+  flex: 1;
+
+  &.is-open .order-select__input {
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 5px 1px #dedcdc;
+  }
+
+  &.is-open .order-select__input-search {
+    display: block;
+  }
+
+  &.is-open .order-select__input-arrow {
+    display: none;
+  }
+
+  &.is-open .order-select__options {
+    display: block;
+  }
+}
+
+.order-select__input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin: 5px 10px 5px 0;
+  border: 1px solid #dedcdc;
+  border-radius: 5px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: text;
+
+  & input {
+    width: 100%;
+    color: black;
+
+    &::placeholder {
+      font-weight: 300;
+      color: #777879;
+      transition: all 0s ease-in-out;
+    }
+  }
+
+  &.is-invalid {
+    background: rgba(#f8e71c, .07);
+  }
+
+  &:focus {
+    box-shadow: 0 0 5px 0 #dedcdc;
+  }
+}
+
+.order-select__input-search {
+  display: none;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 7px;
+  transition: all $standardTransition;
+}
+
+.order-select__input-arrow {
+  width: 15px;
+  height: 8px;
+  margin-top: 2px;
+  transition: all $standardTransition;
+}
+
+.order-select__options {
+  display: none;
+  position: absolute;
+  z-index: 899;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  background: white;
+  margin: 5px 10px 5px 0;
+  border: 1px solid #dedcdc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 4px 1px #dedcdc;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2b2525;
+  overflow-y: auto;
+  transform-origin: center bottom;
+  transform: translateY(-40px);
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #dedcdc;
+  }
+}
+
+.order-select__option {
+  padding: 4px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background: #f2f3f7;
+    transition: all $standardTransition;
+  }
+
+  &.is-selected {
+    background: #dedcdc;
+  }
+}
+
+.order-select__nothing-found {
+  padding: 4px 15px;
+  font-weight: 300;
+  color: #777879;
+}

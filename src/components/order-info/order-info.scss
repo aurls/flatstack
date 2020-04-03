@@ -1,7 +1,6 @@
 @import "../../assets/styles/constants";
 
 .order-info {
-  margin: 20px 40px 40px 40px;
   color: #979797;
 }
 
@@ -33,49 +32,45 @@
 }
 
 .order-info__title {
-  margin-bottom: 18px;
   font-size: 26px;
+  color: $accentColor;
+}
+
+.order-info__label {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
   color: $accentColor;
 }
 
 .order-info__row {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-}
-
-.order-info__input-container {
-  position: relative;
-}
-
-.order-info__input {
-  width: 100%;
-  height: 40px;
-  margin-bottom: 10px;
-  border: 1px solid #dedcdc;
-  border-radius: 5px;
-  padding: 0 15px;
-  font-size: 16px;
-  font-weight: 400;
-  color: black;
-}
-
-.order-info__input[name="shipping-phone"] {
-  width: 50%;
 }
 
 .order-info__continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 180px;
   height: 45px;
+  margin-top: 15px;
   border: 1px solid rgba(67, 28, 93, .8);
   border-radius: 5px;
   background: rgba(90, 16, 148, .8);
   font-size: 16px;
   font-weight: 400;
   color: white;
+  cursor: pointer;
 
   &:hover {
     background: $accentColor;
     transition: all ease-in-out .2s;
   }
-}
 
+  &:focus {
+    box-shadow: 0 0 0 2px #dedcdc;
+  }
+}

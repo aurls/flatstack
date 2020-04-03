@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './order-summary-item.scss';
-import item1 from '../../assets/images/item1.jpg';
 
 const OrderSummaryItem = ({ item }) => {
-  const { id, title, description, count, price } = item;
+  const { image, title, description, count, price } = item;
 
   return (
     <section className="order-summary-item">
       <a className="order-summary-item__link" href="/">
         <img className="order-summary-item__image"
-          src={`item${id}`}
+          src={image}
           alt="" />
 
         <div>
@@ -35,7 +34,8 @@ const OrderSummaryItem = ({ item }) => {
 
 OrderSummaryItem.propTypes = {
   item: PropTypes.exact({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
+    image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     count: PropTypes.number.isRequired,

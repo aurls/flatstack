@@ -71,7 +71,7 @@ module.exports = (env) => {
           loader: 'file-loader',
           options: {
             outputPath: './images',
-            filename: '[name]-[hash:5].[ext]'
+            filename: '[name].[ext]'
           }
         },
         // Loading fonts

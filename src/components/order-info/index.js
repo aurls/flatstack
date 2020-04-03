@@ -1,4 +1,5 @@
 import React from 'react';
+import Shipping from '../shipping';
 import './order-info.scss';
 
 const OrderInfo = () => {
@@ -16,36 +17,8 @@ const OrderInfo = () => {
         </li>
       </ul>
 
-      <h2 className="order-info__title">
-        Shipping Info
-      </h2>
+      <Shipping />
 
-      <div className="order-info__row">
-        <div className="order-info__input-container">
-          <div className="order-info__error-message">
-            Whats wrong
-          </div>
-          <input className="order-info__input" type="text" placeholder="text" />
-        </div>
-      </div>
-
-      <div className="order-info__row">
-        <div className="order-info__input-container">
-          <div className="order-info__error-message">
-            Whats wrong
-          </div>
-          <input className="order-info__input is-invalid" type="text" placeholder="text" />
-        </div>
-      </div>
-
-
-
-
-      <input className="order-info__input" name="shipping-phone" type="text" placeholder="text" />
-
-      <input className="order-info__continue"
-             type="button"
-             value="Continue" />
     </div>
   );
 };

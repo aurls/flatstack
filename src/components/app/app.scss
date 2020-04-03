@@ -24,14 +24,15 @@ body {
 }
 
 .app__order-info {
-  flex: 4;
+  width: 55%;
+  padding: 20px 40px 40px 40px;
 }
 
 .app__order-summary {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 3;
+  width: 45%;
   background: #f2f3f7;
   border-radius: 0 5px 5px 0;
   padding: 20px 13px 15px 13px;

@@ -7,12 +7,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
+
         <div className="header__title">
           <img className="header__title-logo" src={logo} alt="" />
           <div className="header__title-text">
             Frontend Developer Test Task
           </div>
         </div>
+
         <div className="header__cart">
           <div className="header__cart-title">
             Cart
@@ -24,6 +26,7 @@ const Header = () => {
             </span>
           </div>
         </div>
+
       </div>
     </header>
   );
