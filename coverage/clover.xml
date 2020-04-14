@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1586892757453" clover="3.2.0">
-  <project timestamp="1586892757453" name="All files">
-    <metrics statements="108" coveredstatements="108" conditionals="54" coveredconditionals="51" methods="36" coveredmethods="36" elements="198" coveredelements="195" complexity="0" loc="108" ncloc="108" packages="4" files="10" classes="10"/>
+<coverage generated="1586895341038" clover="3.2.0">
+  <project timestamp="1586895341039" name="All files">
+    <metrics statements="122" coveredstatements="122" conditionals="54" coveredconditionals="51" methods="43" coveredmethods="43" elements="219" coveredelements="216" complexity="0" loc="122" ncloc="122" packages="5" files="12" classes="12"/>
+    <package name="actions">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+      <file name="cartActions.js" path="D:\OneDrive\frontend\packages\flatstack\src\actions\cartActions.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="orderActions.js" path="D:\OneDrive\frontend\packages\flatstack\src\actions\orderActions.js">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="constants">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="actionTypes.js" path="D:\OneDrive\frontend\packages\flatstack\src\constants\actionTypes.js">
