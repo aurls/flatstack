@@ -7,8 +7,33 @@ import './order-input.scss';
 import cn from 'classnames';
 
 class OrderInput extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      areErrorMessageVisible: false
+    };
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+  }
+
   shouldComponentUpdate (nextProps) {
     return !isEqual(this.props, nextProps);
+  }
+
+  handleFocus () {
+    if (!this.state.areErrorMessageVisible) {
+      this.setState({
+        areErrorMessageVisible: true
+      });
+    }
+  }
+
+  handleBlur () {
+    if (this.state.areErrorMessageVisible) {
+      this.setState({
+        areErrorMessageVisible: false
+      });
+    }
   }
 
   render () {
@@ -17,7 +42,6 @@ class OrderInput extends React.Component {
       name,
       placeholder,
       value,
-      autofocus,
       inputMode,
       maxLength,
       errors,
@@ -26,6 +50,7 @@ class OrderInput extends React.Component {
     } = this.props;
     const error = errors[name];
     const areErrorFirstInForm = Object.keys(errors)[0] === name;
+    const autofocus = this.props.autofocus || areErrorFirstInForm;
     const inputStyle = cn(
       'order-input',
       { 'is-invalid': error && areErrorsVisible }
@@ -45,6 +70,8 @@ class OrderInput extends React.Component {
           placeholder={placeholder}
           value={value}
           autoFocus={autofocus}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
           inputMode={inputMode}
           maxLength={maxLength}
           onChange={handleInput} />
