@@ -1,1 +1,25 @@
 @import "../../assets/styles/constants";
+
+.payment__security-disclaimer {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #6b6b6b;
+}
+
+.payment__security-disclaimer-icon {
+  position: relative;
+  bottom: -7px;
+  display: inline-block;
+  margin-right: 4px;
+  height: 24px;
+  width: 18px;
+}
+
+.payment__card-logo {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  height: 35px;
+  cursor: text;
+}

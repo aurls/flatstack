@@ -1,0 +1,23 @@
+@import "../../assets/styles/constants";
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-indicator {
+  text-align: center;
+}
+
+.error-indicator__title {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: $accentColor;
+}
+
+.error-indicator__description {
+  font-size: 16px;
+}

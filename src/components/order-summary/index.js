@@ -1,39 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import OrderSummaryItem from '../order-summary-item';
 import './order-summary.scss';
-import image1 from '../../assets/items/item1.jpg';
-import image2 from '../../assets/items/item2.jpg';
-import image3 from '../../assets/items/item3.jpg';
 
-const OrderSummary = () => {
-  const items = [
-    {
-      id: 1,
-      image: image1,
-      title: 'The Chelsea Boot',
-      description: 'Black',
-      count: 1,
-      price: 235
-    },
-    {
-      id: 2,
-      image: image2,
-      title: 'The Twill Snap Backpack',
-      description: 'Reverse Denim + Brown Leather',
-      count: 1,
-      price: 65
-    },
-    {
-      id: 3,
-      image: image3,
-      title: 'The Twill Zip Tote',
-      description: 'Reverse Denim + Brown Leather',
-      count: 1,
-      price: 48
-    }
-  ];
+const OrderSummary = ({ items }) => {
   const subtotal = items.reduce((acc, { price, count }) => acc + price * count, 0);
-  const taxes = +(items.reduce((acc, { count }) => acc + count, 0) * 4.1).toFixed(2);
+  const taxes = +(items.reduce((acc, { count }) => acc + count, 0) * 4.4).toFixed(2);
   const total = subtotal + taxes;
 
   return (
@@ -76,6 +48,10 @@ const OrderSummary = () => {
       </div>
     </section>
   );
+};
+
+OrderSummary.propTypes = {
+  items: PropTypes.array.isRequired
 };
 
 export default OrderSummary;

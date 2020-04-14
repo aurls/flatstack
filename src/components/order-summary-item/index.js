@@ -2,35 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './order-summary-item.scss';
 
-const OrderSummaryItem = ({ item }) => {
-  const { image, title, description, count, price } = item;
+class OrderSummaryItem extends React.Component {
+  shouldComponentUpdate (nextProps) {
+    const { item } = this.props;
+    const { item: nextItem } = nextProps;
+    return item.id !== nextItem.id;
+  }
 
-  return (
-    <section className="order-summary-item">
-      <a className="order-summary-item__link" href="/">
-        <img className="order-summary-item__image"
-          src={image}
-          alt="" />
+  render () {
+    const { item } = this.props;
+    const { image, title, description, count, price } = item;
 
-        <div>
-          <h3 className="order-summary-item__title">
-            {title}
-          </h3>
-          <p className="order-summary-item__description">
-            {description}
-          </p>
-          <div className="order-summary-item__count">
-            Quantity: {count}
+    return (
+      <section className="order-summary-item">
+        <a className="order-summary-item__link" href="/">
+          <img className="order-summary-item__image"
+            src={image}
+            alt="" />
+
+          <div>
+            <h3 className="order-summary-item__title">
+              {title}
+            </h3>
+            <p className="order-summary-item__description">
+              {description}
+            </p>
+            <div className="order-summary-item__count">
+              Quantity: {count}
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
 
-      <div className="order-summary-item__price">
-        ${price * count}
-      </div>
-    </section>
-  );
-};
+        <div className="order-summary-item__price">
+          ${price * count}
+        </div>
+      </section>
+    );
+  }
+}
 
 OrderSummaryItem.propTypes = {
   item: PropTypes.exact({

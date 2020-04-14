@@ -1,66 +1,202 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import stages from '../../constants/stages';
+import isEqual from 'lodash.isequal';
+import countryList from '../../services/countryList';
+import validateShipping from '../../services/validateShipping';
+import Location from '../../services/location';
+
 import OrderInput from '../order-input';
 import OrderSelect from '../order-select';
 import './shipping.scss';
-import countryList from '../../services/countryList';
+import cn from 'classnames';
 
-const Shipping = () => {
-  return (
-    <section className="shipping">
-      <h2 className="order-info__title">
-        Shipping Info
-      </h2>
+class Shipping extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      areErrorsVisible: false
+    };
+    this.location = new Location();
+    this.getLocation = this.getLocation.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleContinueClick = this.handleContinueClick.bind(this);
+    this.handleClickOnLocationIcon = this.handleClickOnLocationIcon.bind(this);
+  }
 
-      <h3 className="order-info__label">
-        Recipient
-      </h3>
+  async componentDidMount () {
+    const { shipping } = this.props;
+    if (!(shipping.country && shipping.city)) {
+      this.getLocation();
+    }
+  }
 
-      <OrderInput name="shipping-name"
-        placeholder="Full Name"
-        value=""
-        autofocus />
+  async getLocation () {
+    const { updateShipping, setShippingLocation } = this.props;
+    try {
+      const location = await this.location.get();
+      if (location.status === 'success') {
+        setShippingLocation(location);
+        updateShipping(this.validateData());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-      <div className="order-info__row">
-        <OrderInput name="shipping-phone"
-          type="phone"
-          placeholder="Daytime Phone"
-          value="" />
-        <p className="shipping__delivery-questions">
-          For delivery questions only
-        </p>
-      </div>
+  validateData () {
+    const form = document.forms.shipping;
+    return validateShipping({
+      name: form.name.value,
+      phone: form.phone.value,
+      street: form.street.value,
+      streetMore: form.streetMore.value,
+      city: form.city.value,
+      country: form.country.value,
+      zip: form.zip.value
+    });
+  }
 
-      <h3 className="order-info__label">
-        Address
-      </h3>
+  handleInput () {
+    const { updateShipping } = this.props;
+    updateShipping(this.validateData());
+  }
 
-      <OrderInput name="shipping-street"
-        placeholder="Street Address"
-        value="" />
+  handleContinueClick () {
+    const { setOrderStage, updateShipping } = this.props;
+    const validatedData = this.validateData();
+    if (isEqual(validatedData.errors, {})) {
+      setOrderStage(stages.BILLING);
+    } else {
+      updateShipping(validatedData);
+      this.setState({
+        areErrorsVisible: true
+      });
+    }
+  }
 
-      <OrderInput name="shipping-street-more"
-        placeholder="Apt, Suite, Bldg, Gate Code (optional)"
-        value="" />
+  async handleClickOnLocationIcon () {
+    this.getLocation();
+  }
 
-      <OrderInput name="shipping-city"
-        placeholder="City"
-        value="" />
+  render () {
+    const { shipping } = this.props;
+    const { areErrorsVisible } = this.state;
+    const locationIconStyle = cn(
+      'order-input__location-icon',
+      { 'is-active': !shipping.city },
+      { 'is-inactive': shipping.city }
+    );
 
-      <div className="order-info__row">
-        <OrderSelect name="shipping-country"
-          options={countryList}
-          placeholder="Country"
-          value="" />
-        <OrderInput name="shipping-zip"
-          placeholder="ZIP"
-          value="" />
-      </div>
+    return (
+      <form className="shipping" name="shipping">
+        <h2 className="order-info__title">
+          Shipping Info
+        </h2>
 
-      <div className="order-info__continue">
-        Continue
-      </div>
-    </section>
-  );
+        <h3 className="order-info__label">
+          Recipient
+        </h3>
+
+        <OrderInput
+          name="name"
+          placeholder="Full Name"
+          value={shipping.name}
+          autofocus
+          handleInput={this.handleInput}
+          errors={shipping.errors}
+          areErrorsVisible={areErrorsVisible} />
+
+        <div className="order-info__row">
+          <OrderInput
+            name="phone"
+            type="phone"
+            placeholder="Daytime Phone"
+            value={shipping.phone}
+            handleInput={this.handleInput}
+            inputMode="tel"
+            errors={shipping.errors}
+            areErrorsVisible={areErrorsVisible} />
+          <p className="shipping__delivery-questions">
+            For delivery questions only
+          </p>
+        </div>
+
+        <h3 className="order-info__label">
+          Address
+        </h3>
+
+        <OrderInput
+          name="street"
+          placeholder="Street Address"
+          value={shipping.street}
+          handleInput={this.handleInput}
+          errors={shipping.errors}
+          areErrorsVisible={areErrorsVisible} />
+
+        <OrderInput
+          name="streetMore"
+          placeholder="Apt, Suite, Bldg, Gate Code (optional)"
+          value={shipping.streetMore}
+          handleInput={this.handleInput}
+          errors={shipping.errors}
+          areErrorsVisible={areErrorsVisible} />
+
+        <OrderInput
+          name="city"
+          placeholder="City"
+          value={shipping.city}
+          handleInput={this.handleInput}
+          errors={shipping.errors}
+          areErrorsVisible={areErrorsVisible}>
+          <div
+            className={locationIconStyle}
+            onClick={this.handleClickOnLocationIcon}>
+          </div>
+        </OrderInput>
+
+        <div className="order-info__row">
+          <OrderSelect
+            name="country"
+            options={countryList}
+            placeholder="Country"
+            value={shipping.country}
+            handleInput={this.handleInput}
+            errors={shipping.errors}
+            areErrorsVisible={areErrorsVisible} />
+          <OrderInput
+            name="zip"
+            placeholder="ZIP"
+            value={shipping.zip}
+            handleInput={this.handleInput}
+            inputMode="numeric"
+            errors={shipping.errors}
+            areErrorsVisible={areErrorsVisible} />
+        </div>
+
+        <div className="order-info__continue"
+          onClick={this.handleContinueClick}>
+            Continue
+        </div>
+      </form>
+    );
+  }
+}
+
+Shipping.propTypes = {
+  shipping: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    street: PropTypes.string.isRequired,
+    streetMore: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    zip: PropTypes.string.isRequired,
+    errors: PropTypes.object.isRequired
+  }).isRequired,
+  setOrderStage: PropTypes.func.isRequired,
+  updateShipping: PropTypes.func.isRequired,
+  setShippingLocation: PropTypes.func.isRequired
 };
 
 export default Shipping;

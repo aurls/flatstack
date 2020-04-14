@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ErrorMessage from '../error-message';
+import ErrorIndicator from '../error-indicator';
 
 class ErrorBoundary extends React.Component {
   constructor (props) {
@@ -17,7 +17,7 @@ class ErrorBoundary extends React.Component {
   }
 
   render () {
-    if (this.state.hasError) return <ErrorMessage />;
+    if (this.state.hasError) return <ErrorIndicator />;
     return this.props.children;
   }
 }

@@ -1,57 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import isEqual from 'lodash.isequal';
+
+import OrderErrorMessage from '../order-error-message';
+import cn from 'classnames';
 import './order-select.scss';
-import arrow from './arrow.svg';
-import search from './search.svg';
+import arrow from '../order-select/arrow.svg';
+import search from '../order-select/search.svg';
 
 class OrderSelect extends React.Component {
   constructor (props) {
     super(props);
-    const { options, value } = this.props;
     this.state = {
       isOpen: false,
-      options,
-      value,
-      inputText: ''
+      filteredOptions: this.props.options
     };
 
     this.inputField = React.createRef();
     this.optionsList = React.createRef();
     this.selectedOption = React.createRef();
 
-    this.filterOptions = this.filterOptions.bind(this);
     this.setFocus = this.setFocus.bind(this);
     this.unsetFocus = this.unsetFocus.bind(this);
     this.openOptions = this.openOptions.bind(this);
-    this.setScrollInOptionsList = this.setScrollInOptionsList.bind(this);
     this.closeOptions = this.closeOptions.bind(this);
     this.setValue = this.setValue.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.handleKeydown = this.handleKeydown.bind(this);
+    this.setScrollInOptionsList = this.setScrollInOptionsList.bind(this);
+    this.filterOptions = this.filterOptions.bind(this);
+    this.handleFieldInput = this.handleFieldInput.bind(this);
+    this.handleFieldKeyDown = this.handleFieldKeyDown.bind(this);
   }
 
-  filterOptions (inputText) {
-    const { options } = this.props;
-    const regExp = new RegExp(inputText.trim(), 'i');
-
-    return options.filter(([, label]) =>
-      label.match(regExp));
-  }
-
-  setInputText (selectedValue) {
-    const { options } = this.props;
-    const [, label] = options.find(([value]) => value === selectedValue);
-    if (label) return label;
-    return null;
-  }
-
-  setScrollInOptionsList () {
-    const optionsList = this.optionsList.current;
-    const selectedOption = this.selectedOption.current;
-    if (selectedOption) {
-      optionsList.scrollTop =
-        selectedOption.offsetTop - optionsList.clientHeight + selectedOption.clientHeight;
-    }
+  shouldComponentUpdate (nextProps, nextState) {
+    return !(isEqual(this.props, nextProps) &&
+      isEqual(this.state, nextState));
   }
 
   setFocus () {
@@ -63,137 +45,148 @@ class OrderSelect extends React.Component {
   }
 
   openOptions () {
-    this.setState({
-      isOpen: true
-    });
-    document.addEventListener('click', () => {
-      this.closeOptions();
-    }, true);
+    if (!this.state.isOpen) {
+      this.setState({
+        isOpen: true
+      });
+    }
   }
 
   closeOptions () {
     this.setScrollInOptionsList();
-    this.setState({
-      isOpen: false
-    });
+    if (this.state.isOpen) {
+      this.setState({
+        isOpen: false
+      });
+    }
   }
 
-  setValue (value, event) {
-    const { options } = this.props;
-    event.stopPropagation();
-    this.setState({
-      options,
-      value,
-      inputText: this.setInputText(value)
-    });
+  setValue (value) {
+    const { handleInput } = this.props;
+    this.inputField.current.value = value;
+    handleInput();
   }
 
-  handleInput (event) {
-    const inputText = event.target.value;
-    const filteredOptions = this.filterOptions(inputText);
-    const selectedOption = filteredOptions.find(([, label]) =>
-      label.toLowerCase() === inputText.toLowerCase().trim());
-
+  setScrollInOptionsList () {
+    const optionsList = this.optionsList.current;
+    const selectedOption = this.selectedOption.current;
     if (selectedOption) {
-      const [value, label] = selectedOption;
-      this.setState({
-        isOpen: true,
-        value,
-        inputText: label,
-        options: filteredOptions
-      });
-    } else {
-      this.setState({
-        isOpen: true,
-        value: null,
-        inputText,
-        options: filteredOptions
-      });
+      optionsList.scrollTop =
+        selectedOption.offsetTop - optionsList.clientHeight + selectedOption.clientHeight;
     }
   }
 
-  handleKeydown (event) {
-    const { value, options } = this.state;
-    if (event.key === 'Enter') {
-      if (value) {
-        this.closeOptions();
-        this.unsetFocus();
-      }
-      if (options.length === 1) {
-        this.setState({
-          value: options[0][0],
-          inputText: options[0][1]
-        });
-        this.closeOptions();
-        this.unsetFocus();
-      }
+  filterOptions (value) {
+    const { options } = this.props;
+    if (!value) return options;
+
+    const regExp = new RegExp(value.trim(), 'i');
+    return options.filter(([, label]) =>
+      label.match(regExp));
+  }
+
+  handleFieldInput () {
+    const { handleInput } = this.props;
+    handleInput();
+    this.setState({
+      filteredOptions: this.filterOptions(this.inputField.current.value)
+    });
+  }
+
+  handleFieldKeyDown (event) {
+    const { filteredOptions } = this.state;
+    if (event.key === 'Enter' && filteredOptions.length === 1) {
+      this.setValue(filteredOptions[0][1]);
+      this.unsetFocus();
     }
   }
 
-  renderOptions () {
-    const { options } = this.state;
-    if (options.length === 0) {
-      return (
-        <li className="order-select__nothing-found">
-          Nothing found
-        </li>
-      );
-    }
+  renderOptions (options, selectedLabel) {
+    return (
+      <ul className="order-select__options" ref={this.optionsList}>
+        {
+          options.length === 0 &&
+          <li className="order-select__nothing-found">
+            Nothing found
+          </li>
+        }
+        {
+          options.map(([value, label]) => {
+            const style = cn(
+              'order-select__option',
+              { 'is-selected': label === selectedLabel || this.state.filteredOptions.length === 1 }
+            );
+            const handleClick = () => {
+              this.setValue(label);
+            };
+            const ref = label === selectedLabel ? this.selectedOption : null;
 
-    return options.map(([value, label]) => {
-      const { value: selectedValue } = this.state;
-      let style = 'order-select__option';
-      let ref = null;
-      if (value === selectedValue) {
-        style += ' is-selected';
-        ref = this.selectedOption;
-      }
-
-      return (
-        <li key={value}
-          ref={ref}
-          className={style}
-          onMouseDown={(event) => this.setValue(value, event)}>
-          {label}
-        </li>
-      );
-    })
+            return (
+              <li
+                key={value}
+                className={style}
+                onMouseDown={handleClick}
+                ref={ref}>
+                {label}
+              </li>
+            );
+          })
+        }
+      </ul>
+    );
   }
 
   render () {
-    const { name, placeholder } = this.props;
-    const { isOpen, value, inputText } = this.state;
-
-    let containerStyle = 'order-select';
-    if (isOpen) containerStyle += ' is-open';
+    const {
+      name,
+      value,
+      placeholder,
+      errors,
+      areErrorsVisible
+    } = this.props;
+    const { isOpen, filteredOptions } = this.state;
+    const error = errors[name];
+    const areErrorFirstInForm = Object.keys(errors)[0] === name;
+    const containerStyle = cn(
+      'order-select',
+      { 'is-open': isOpen }
+    );
+    const inputContainerStyle = cn(
+      'order-select__input',
+      { 'is-invalid': error && areErrorsVisible && !isOpen }
+    );
 
     return (
       <div className={containerStyle}>
-        <input type="hidden"
-          name={name}
-          value={value} />
+        {
+          error && areErrorsVisible && areErrorFirstInForm && !isOpen &&
+          <OrderErrorMessage error={error} />
+        }
 
-        <ul className="order-select__options" ref={this.optionsList}>
-          {
-            this.renderOptions()
-          }
-        </ul>
+        {
+          this.renderOptions(filteredOptions, value)
+        }
 
-        <div className="order-select__input" onClick={this.openOptions}>
-          <img className="order-select__input-search"
+        <div className={inputContainerStyle} onClick={this.setFocus}>
+          <img
+            className="order-select__input-search"
             src={search}
             alt="" />
 
-          <input type="text"
-            value={inputText}
+          <input
+            type="text"
+            name={name}
+            value={value}
             placeholder={placeholder}
+            inputMode="text"
+            onChange={this.handleFieldInput}
             onFocus={this.openOptions}
-            onChange={this.handleInput}
-            onKeyDown={this.handleKeydown}
             onBlur={this.closeOptions}
+            onKeyDown={this.handleFieldKeyDown}
             ref={this.inputField} />
 
-          <img className="order-select__input-arrow"
+          <img
+            className="order-select__input-arrow"
             src={arrow}
             alt="" />
         </div>
@@ -202,20 +195,14 @@ class OrderSelect extends React.Component {
   }
 }
 
-OrderSelect.defaultProps = {
-  value: null,
-  placeholder: 'Select Item'
-};
-
 OrderSelect.propTypes = {
   name: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.string
-    ))
-    .isRequired,
+  options: PropTypes.array.isRequired,
   value: PropTypes.string,
-  placeholder: PropTypes.string.isRequired
+  placeholder: PropTypes.string.isRequired,
+  handleInput: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+  areErrorsVisible: PropTypes.bool.isRequired
 };
 
 export default OrderSelect;

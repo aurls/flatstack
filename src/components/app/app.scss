@@ -28,6 +28,54 @@ body {
   padding: 20px 40px 40px 40px;
 }
 
+.order-info__title {
+  font-size: 26px;
+  line-height: 31px;
+  color: $accentColor;
+}
+
+.order-info__row {
+  display: flex;
+  align-items: center;
+}
+
+.order-info__label {
+  margin-top: 20px;
+  font-size: 16px;
+  color: $accentColor;
+}
+
+.order-info__continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  width: 180px;
+  height: 45px;
+  border: 1px solid rgba(67, 28, 93, .8);
+  border-radius: 5px;
+  background: $accentColor;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background: #431c5d;
+    transition: all $standardTransition;
+  }
+}
+
+.payment {
+  .order-info__label {
+    margin-top: 15px;
+  }
+
+  .order-info__continue {
+    margin-top: 25px;
+  }
+}
+
 .app__order-summary {
   display: flex;
   flex-direction: column;
@@ -36,6 +84,11 @@ body {
   background: #f2f3f7;
   border-radius: 0 5px 5px 0;
   padding: 20px 13px 15px 13px;
+
+  &.is-inactive {
+    opacity: .6;
+    pointer-events: none;
+  }
 }
 
 .app__terms-link {
@@ -55,22 +108,20 @@ body {
   }
 }
 
-
-
 @font-face {
   font-family: "helvetica neue";
-  src: url("../../assets/fonts/HelveticaNeueLight.ttf") format('truetype');
+  src: url("../../assets/fonts/HelveticaNeueCyr-Light.woff2") format('woff2');
   font-weight: 300;
 }
 
 @font-face {
   font-family: "helvetica neue";
-  src: url("../../assets/fonts/HelveticaNeue.ttf") format('truetype');
+  src: url("../../assets/fonts/HelveticaNeueCyr-Medium.woff2") format('woff2');
   font-weight: 400;
 }
 
 @font-face {
   font-family: "helvetica neue";
-  src: url("../../assets/fonts/HelveticaNeueBold.ttf") format('truetype');
-  font-weight: 700;
+  src: url("../../assets/fonts/HelveticaNeueCyr-Bold.woff2") format('woff2');
+  font-weight: 600;
 }
