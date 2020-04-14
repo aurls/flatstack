@@ -17,7 +17,6 @@ body {
   margin: 95px auto 75px auto;
   width: 100%;
   max-width: 700px;
-  min-height: 600px;
   background: white;
   box-shadow: 0 2px 18px rgba(black, .07);
   border-radius: 5px;
@@ -105,6 +104,26 @@ body {
     border-color: #777879;
     color: #777879;
     transition: all $standardTransition;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app__content {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin-top: 50px;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding-bottom: 50px;
+  }
+
+  .app__order-info {
+    width: 100%;
+  }
+
+  .app__order-summary {
+    width: 100%;
+    padding: 20px 40px 30px 40px;
   }
 }
 
