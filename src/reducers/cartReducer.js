@@ -1,6 +1,6 @@
 import actionTypes from '../constants/actionTypes';
 
-const initialState = {
+export const initialState = {
   items: []
 };
 

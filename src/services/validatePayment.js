@@ -1,11 +1,16 @@
 import { validateValue } from '../utils/validate';
+import errorMessages from '../constants/errorMessages';
 
 const updateErrors = (data, cardNumberMinLength, securityCodeSize) => {
   const errors = {};
-  if (data.cardholder === '') errors.cardholder = 'Please, enter cardholder name';
-  if (data.cardNumber.length < cardNumberMinLength) errors.cardNumber = 'Please, enter card number';
-  if (data.expireDate.length < 4) errors.expireDate = 'Please, enter expire date';
-  if (data.securityCode.length < securityCodeSize) errors.securityCode = 'Please, enter security code';
+  if (data.cardholder === '') errors.cardholder = errorMessages.payment.cardholder;
+  if (data.cardNumber.length < cardNumberMinLength) {
+    errors.cardNumber = errorMessages.payment.cardNumber;
+  }
+  if (data.expireDate.length < 4) errors.expireDate = errorMessages.payment.expireDate;
+  if (data.securityCode.length < securityCodeSize) {
+    errors.securityCode = errorMessages.payment.securityCode;
+  }
   return errors;
 };
 

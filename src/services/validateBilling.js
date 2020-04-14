@@ -1,13 +1,14 @@
 import { validateValue } from '../utils/validate';
+import errorMessages from '../constants/errorMessages';
 
 const updateErrors = (data) => {
   const errors = {};
-  if (data.name === '') errors.name = 'Please, enter recipient full name';
-  if (data.email === '') errors.email = 'Please, enter recipient email address';
-  if (data.street === '') errors.street = 'Please, enter street address';
-  if (data.city === '') errors.city = 'Please, enter recipient city';
-  if (data.country === '') errors.country = 'Please, select country';
-  if (data.zip === '') errors.zip = 'Please, enter recipient ZIP';
+  if (data.name === '') errors.name = errorMessages.billing.name;
+  if (data.email === '') errors.email = errorMessages.billing.email;
+  if (data.street === '') errors.street = errorMessages.billing.street;
+  if (data.city === '') errors.city = errorMessages.billing.city;
+  if (data.country === '') errors.country = errorMessages.billing.country;
+  if (data.zip === '') errors.zip = errorMessages.billing.zip;
   return errors;
 };
 
@@ -16,7 +17,7 @@ const validateName = (name) => {
 };
 
 const validateEmail = (email) => {
-  return validateValue(email, new RegExp('[a-zA-Zа-яА-Я.-_@]'));
+  return validateValue(email, new RegExp('[a-zA-Zа-яА-Я0-9.-_@]'));
 };
 
 const validateStreet = (street) => {

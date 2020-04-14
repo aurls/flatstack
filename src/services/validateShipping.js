@@ -1,13 +1,14 @@
 import { validateValue } from '../utils/validate';
+import errorMessages from '../constants/errorMessages';
 
 const updateErrors = (data) => {
   const errors = {};
-  if (data.name === '') errors.name = 'Please, enter recipient full name';
-  if (data.phone === '') errors.phone = 'Please, enter phone';
-  if (data.street === '') errors.street = 'Please, enter street address';
-  if (data.city === '') errors.city = 'Please, enter recipient city';
-  if (data.country === '') errors.country = 'Please, select country';
-  if (data.zip === '') errors.zip = 'Please, enter recipient ZIP';
+  if (data.name === '') errors.name = errorMessages.shipping.name;
+  if (data.phone === '') errors.phone = errorMessages.shipping.phone;
+  if (data.street === '') errors.street = errorMessages.shipping.street;
+  if (data.city === '') errors.city = errorMessages.shipping.city;
+  if (data.country === '') errors.country = errorMessages.shipping.country;
+  if (data.zip === '') errors.zip = errorMessages.shipping.zip;
   return errors;
 };
 
