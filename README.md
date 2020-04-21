@@ -1,10 +1,4 @@
 # Тестовое задание Flatstack
 
-[![Travis][build-badge]][build]
-[![Coveralls][coveralls-badge]][coveralls]
-
-[build-badge]: https://img.shields.io/travis/vladtaranov/flatstack/master.png?style=flat-square
-[build]: https://travis-ci.org/vladtaranov/flatstack
-
-[coveralls-badge]: https://img.shields.io/coveralls/vladtaranov/flatstack/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/vladtaranov/flatstack
+[![Build Status](https://travis-ci.org/vladtaranov/flatstack.svg?branch=master)](https://travis-ci.org/vladtaranov/flatstack)
+[![Coverage Status](https://coveralls.io/repos/github/vladtaranov/flatstack/badge.svg?branch=master)](https://coveralls.io/github/vladtaranov/flatstack?branch=master)

@@ -9,3 +9,11 @@ branches:
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 19b7388e9325bb9410a91df67459d2e28a90ce2a
+  keep_history: true
+  on:
+    branch: master
