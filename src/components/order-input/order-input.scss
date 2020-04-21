@@ -1,0 +1,81 @@
+@import "../../assets/styles/constants";
+
+.order-input__container {
+  position: relative;
+}
+
+.order-input {
+  width: 100%;
+  height: 40px;
+  margin: 5px 0;
+  border: 1px solid #dedcdc;
+  border-radius: 5px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+
+  &.is-invalid {
+    background: rgba(#f8e71c, .07);
+  }
+
+  &::placeholder {
+    color: #777879 !important;
+    font-weight: 300;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #dedcdc;
+  }
+}
+
+.order-input__location-icon {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &.is-active {
+    background: url("./geodetect-active.svg");
+  }
+
+  &.is-inactive {
+    background: url("./geodetect-inactive.svg");
+  }
+
+  &:hover {
+    opacity: .8;
+    transition: all $standardTransition;
+  }
+}
+
+.shipping {
+  .order-input[name="phone"] {
+    width: 180px;
+  }
+
+  .order-input[name="zip"] {
+    width: 115px;
+    margin-left: 10px;
+  }
+}
+
+.billing {
+  .order-input[name="zip"] {
+    width: 115px;
+    margin-left: 10px;
+  }
+}
+
+.payment {
+  .order-input[name="expireDate"] {
+    width: 95px;
+    margin-right: 30px;
+  }
+
+  .order-input[name="securityCode"] {
+    width: 95px;
+  }
+}

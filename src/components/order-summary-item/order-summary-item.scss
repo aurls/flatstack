@@ -1,0 +1,49 @@
+@import "../../assets/styles/constants";
+
+.order-summary-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px 0;
+  font-size: 11px;
+  font-weight: 400;
+  color: #777879;
+}
+
+.order-summary-item__link {
+  display: flex;
+  margin-right: auto;
+
+  &:hover {
+    color: #2b2525;
+    transition: all $standardTransition;
+  }
+
+  &:hover .order-summary-item__image {
+    border-color: #979797;
+    transition: border-color $standardTransition;
+  }
+}
+
+.order-summary-item__image {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+
+.order-summary-item__title {
+  font-size: 12px;
+}
+
+.order-summary-item__description,
+.order-summary-item__count {
+  color: #2b2525;
+}
+
+.order-summary-item__price {
+  align-self: flex-start;
+  font-size: 12px;
+  color: #777879;
+}
