@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderSummary component Default state 1`] = `
+<section
+  class="order-summary"
+>
+  <h2
+    class="order-summary__title"
+  >
+    Order Summary
+  </h2>
+  <a
+    class="order-summary__edit-order"
+    href="/"
+  >
+    Edit Order
+  </a>
+  <div
+    class="order-summary__items"
+  >
+    <section
+      class="order-summary-item"
+    >
+      <a
+        class="order-summary-item__link"
+        href="/"
+      >
+        <img
+          alt=""
+          class="order-summary-item__image"
+          src="image1"
+        />
+        <div>
+          <h3
+            class="order-summary-item__title"
+          >
+            The Chelsea Boot
+          </h3>
+          <p
+            class="order-summary-item__description"
+          >
+            Black
+          </p>
+          <div
+            class="order-summary-item__count"
+          >
+            Quantity: 1
+          </div>
+        </div>
+      </a>
+      <div
+        class="order-summary-item__price"
+      >
+        $235
+      </div>
+    </section>
+    <section
+      class="order-summary-item"
+    >
+      <a
+        class="order-summary-item__link"
+        href="/"
+      >
+        <img
+          alt=""
+          class="order-summary-item__image"
+          src="image2"
+        />
+        <div>
+          <h3
+            class="order-summary-item__title"
+          >
+            The Twill Snap Backpack
+          </h3>
+          <p
+            class="order-summary-item__description"
+          >
+            Reverse Denim + Brown Leather
+          </p>
+          <div
+            class="order-summary-item__count"
+          >
+            Quantity: 1
+          </div>
+        </div>
+      </a>
+      <div
+        class="order-summary-item__price"
+      >
+        $65
+      </div>
+    </section>
+    <section
+      class="order-summary-item"
+    >
+      <a
+        class="order-summary-item__link"
+        href="/"
+      >
+        <img
+          alt=""
+          class="order-summary-item__image"
+          src="image3"
+        />
+        <div>
+          <h3
+            class="order-summary-item__title"
+          >
+            The Twill Zip Tote
+          </h3>
+          <p
+            class="order-summary-item__description"
+          >
+            Reverse Denim + Brown Leather
+          </p>
+          <div
+            class="order-summary-item__count"
+          >
+            Quantity: 1
+          </div>
+        </div>
+      </a>
+      <div
+        class="order-summary-item__price"
+      >
+        $48
+      </div>
+    </section>
+  </div>
+  <div
+    class="order-summary__invoice"
+  >
+    <div
+      class="order-summary__invoice-subtotal"
+    >
+      <p>
+        Subtotal
+      </p>
+      <p>
+        $348
+      </p>
+    </div>
+    <div
+      class="order-summary__invoice-shipping"
+    >
+      <p>
+        Shipping
+      </p>
+      <p>
+        Free
+      </p>
+    </div>
+    <div
+      class="order-summary__invoice-taxes"
+    >
+      <p>
+        Taxes
+      </p>
+      <p>
+        $13.2
+      </p>
+    </div>
+    <div
+      class="order-summary__invoice-total"
+    >
+      <p>
+        Total
+      </p>
+      <p>
+        $361.2
+      </p>
+    </div>
+  </div>
+</section>
+`;

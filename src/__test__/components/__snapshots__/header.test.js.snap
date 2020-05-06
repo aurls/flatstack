@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Shipping stage 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="header__container"
+  >
+    <div
+      className="header__title"
+    >
+      <img
+        alt=""
+        className="header__title-logo"
+        src={null}
+      />
+      <div
+        className="header__title-text"
+      >
+        Frontend Developer Test Task
+      </div>
+    </div>
+    <div
+      className="header__cart"
+    >
+      <div
+        className="header__cart-title"
+      >
+        Cart
+      </div>
+      <img
+        alt=""
+        className="header__cart-icon"
+        src={null}
+      />
+      <div
+        className="header__cart-count"
+      >
+        <span>
+          3
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Header component Success stage 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="header__container"
+  >
+    <div
+      className="header__title"
+    >
+      <img
+        alt=""
+        className="header__title-logo"
+        src={null}
+      />
+      <div
+        className="header__title-text"
+      >
+        Frontend Developer Test Task
+      </div>
+    </div>
+    <div
+      className="header__cart"
+    >
+      <div
+        className="header__cart-title"
+      >
+        Cart
+      </div>
+      <img
+        alt=""
+        className="header__cart-icon"
+        src={null}
+      />
+    </div>
+  </div>
+</header>
+`;

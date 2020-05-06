@@ -2,6 +2,36 @@ import orderReducer, { initialState } from '../../reducers/orderReducer';
 import actionTypes from '../../constants/actionTypes';
 import stages from '../../constants/stages';
 
+export const shipping = {
+  name: 'John Dow',
+  phone: '+1 123 456',
+  street: 'Lenin',
+  streetMore: '42',
+  city: 'St. Petersburg',
+  country: 'Russia',
+  zip: '123456',
+  errors: {}
+};
+
+export const billing = {
+  name: 'John Dow',
+  email: 'mail@gmail.com',
+  street: 'Lenin',
+  streetMore: '42',
+  city: 'St. Petersburg',
+  country: 'Russia',
+  zip: '123456',
+  errors: {}
+};
+
+export const payment = {
+  cardholder: 'John Dow',
+  cardNumber: '420012345678',
+  expireDate: '1221',
+  securityCode: '432',
+  errors: {}
+};
+
 describe('Order reducer', () => {
   test('Set order stage', () => {
     const action = {
@@ -17,16 +47,6 @@ describe('Order reducer', () => {
   });
 
   test('Update shipping', () => {
-    const shipping = {
-      name: 'John Dow',
-      phone: '+1 123 456',
-      street: 'Lenin',
-      streetMore: '42',
-      city: 'St. Petersburg',
-      country: 'Russia',
-      zip: '123456',
-      errors: {}
-    };
     const action = {
       type: actionTypes.UPDATE_SHIPPING,
       payload: shipping
@@ -61,16 +81,6 @@ describe('Order reducer', () => {
   });
 
   test('Update billing', () => {
-    const billing = {
-      name: 'John Dow',
-      email: 'mail@gmail.com',
-      street: 'Lenin',
-      streetMore: '42',
-      city: 'St. Petersburg',
-      country: 'Russia',
-      zip: '123456',
-      errors: {}
-    };
     const action = {
       type: actionTypes.UPDATE_BILLING,
       payload: billing
@@ -105,13 +115,6 @@ describe('Order reducer', () => {
   });
 
   test('Update payment', () => {
-    const payment = {
-      cardholder: 'John Dow',
-      cardNumber: '420012345678',
-      expireDate: '1221',
-      securityCode: '432',
-      errors: {}
-    };
     const action = {
       type: actionTypes.UPDATE_PAYMENT,
       payload: payment

@@ -1,0 +1,1128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shipping component Default state 1`] = `
+<form
+  className="shipping"
+  name="shipping"
+>
+  <h2
+    className="order-info__title"
+  >
+    Shipping Info
+  </h2>
+  <h3
+    className="order-info__label"
+  >
+    Recipient
+  </h3>
+  <OrderInput
+    areErrorsVisible={false}
+    autofocus={true}
+    errors={Object {}}
+    handleInput={[Function]}
+    inputMode="text"
+    maxLength={null}
+    name="name"
+    placeholder="Full Name"
+    type="text"
+    value="John Dow"
+  />
+  <div
+    className="order-info__row"
+  >
+    <OrderInput
+      areErrorsVisible={false}
+      autofocus={false}
+      errors={Object {}}
+      handleInput={[Function]}
+      inputMode="tel"
+      maxLength={null}
+      name="phone"
+      placeholder="Daytime Phone"
+      type="phone"
+      value="+1 123 456"
+    />
+    <p
+      className="shipping__delivery-questions"
+    >
+      For delivery questions only
+    </p>
+  </div>
+  <h3
+    className="order-info__label"
+  >
+    Address
+  </h3>
+  <OrderInput
+    areErrorsVisible={false}
+    autofocus={false}
+    errors={Object {}}
+    handleInput={[Function]}
+    inputMode="text"
+    maxLength={null}
+    name="street"
+    placeholder="Street Address"
+    type="text"
+    value="Lenin"
+  />
+  <OrderInput
+    areErrorsVisible={false}
+    autofocus={false}
+    errors={Object {}}
+    handleInput={[Function]}
+    inputMode="text"
+    maxLength={null}
+    name="streetMore"
+    placeholder="Apt, Suite, Bldg, Gate Code (optional)"
+    type="text"
+    value="42"
+  />
+  <OrderInput
+    areErrorsVisible={false}
+    autofocus={false}
+    errors={Object {}}
+    handleInput={[Function]}
+    inputMode="text"
+    maxLength={null}
+    name="city"
+    placeholder="City"
+    type="text"
+    value="St. Petersburg"
+  >
+    <div
+      className="order-input__location-icon is-inactive"
+      onClick={[Function]}
+    />
+  </OrderInput>
+  <div
+    className="order-info__row"
+  >
+    <OrderSelect
+      areErrorsVisible={false}
+      errors={Object {}}
+      handleInput={[Function]}
+      name="country"
+      options={
+        Array [
+          Array [
+            "af",
+            "Afghanistan",
+          ],
+          Array [
+            "al",
+            "Albania",
+          ],
+          Array [
+            "dz",
+            "Algeria",
+          ],
+          Array [
+            "as",
+            "American Samoa",
+          ],
+          Array [
+            "ad",
+            "Andorra",
+          ],
+          Array [
+            "ao",
+            "Angola",
+          ],
+          Array [
+            "ai",
+            "Anguilla",
+          ],
+          Array [
+            "aq",
+            "Antarctica",
+          ],
+          Array [
+            "ag",
+            "Antigua and Barbuda",
+          ],
+          Array [
+            "ar",
+            "Argentina",
+          ],
+          Array [
+            "am",
+            "Armenia",
+          ],
+          Array [
+            "aw",
+            "Aruba",
+          ],
+          Array [
+            "au",
+            "Australia",
+          ],
+          Array [
+            "at",
+            "Austria",
+          ],
+          Array [
+            "az",
+            "Azerbaijan",
+          ],
+          Array [
+            "bs",
+            "Bahamas",
+          ],
+          Array [
+            "bh",
+            "Bahrain",
+          ],
+          Array [
+            "bd",
+            "Bangladesh",
+          ],
+          Array [
+            "bb",
+            "Barbados",
+          ],
+          Array [
+            "by",
+            "Belarus",
+          ],
+          Array [
+            "be",
+            "Belgium",
+          ],
+          Array [
+            "bz",
+            "Belize",
+          ],
+          Array [
+            "bj",
+            "Benin",
+          ],
+          Array [
+            "bm",
+            "Bermuda",
+          ],
+          Array [
+            "bt",
+            "Bhutan",
+          ],
+          Array [
+            "bo",
+            "Bolivia, Plurinational State of",
+          ],
+          Array [
+            "bq",
+            "Bonaire, Sint Eustatius and Saba",
+          ],
+          Array [
+            "ba",
+            "Bosnia and Herzegovina",
+          ],
+          Array [
+            "bw",
+            "Botswana",
+          ],
+          Array [
+            "bv",
+            "Bouvet Island",
+          ],
+          Array [
+            "br",
+            "Brazil",
+          ],
+          Array [
+            "io",
+            "British Indian Ocean Territory",
+          ],
+          Array [
+            "bn",
+            "Brunei Darussalam",
+          ],
+          Array [
+            "bg",
+            "Bulgaria",
+          ],
+          Array [
+            "bf",
+            "Burkina Faso",
+          ],
+          Array [
+            "bi",
+            "Burundi",
+          ],
+          Array [
+            "cv",
+            "Cabo Verde",
+          ],
+          Array [
+            "kh",
+            "Cambodia",
+          ],
+          Array [
+            "cm",
+            "Cameroon",
+          ],
+          Array [
+            "ca",
+            "Canada",
+          ],
+          Array [
+            "ky",
+            "Cayman Islands",
+          ],
+          Array [
+            "cf",
+            "Central African Republic",
+          ],
+          Array [
+            "td",
+            "Chad",
+          ],
+          Array [
+            "cl",
+            "Chile",
+          ],
+          Array [
+            "cn",
+            "China",
+          ],
+          Array [
+            "cx",
+            "Christmas Island",
+          ],
+          Array [
+            "cc",
+            "Cocos (Keeling) Islands",
+          ],
+          Array [
+            "co",
+            "Colombia",
+          ],
+          Array [
+            "km",
+            "Comoros",
+          ],
+          Array [
+            "cg",
+            "Congo",
+          ],
+          Array [
+            "cd",
+            "Congo, Democratic Republic of the",
+          ],
+          Array [
+            "ck",
+            "Cook Islands",
+          ],
+          Array [
+            "cr",
+            "Costa Rica",
+          ],
+          Array [
+            "hr",
+            "Croatia",
+          ],
+          Array [
+            "cu",
+            "Cuba",
+          ],
+          Array [
+            "cw",
+            "Curaçao",
+          ],
+          Array [
+            "cy",
+            "Cyprus",
+          ],
+          Array [
+            "cz",
+            "Czechia",
+          ],
+          Array [
+            "ci",
+            "Côte d'Ivoire",
+          ],
+          Array [
+            "dk",
+            "Denmark",
+          ],
+          Array [
+            "dj",
+            "Djibouti",
+          ],
+          Array [
+            "dm",
+            "Dominica",
+          ],
+          Array [
+            "do",
+            "Dominican Republic",
+          ],
+          Array [
+            "ec",
+            "Ecuador",
+          ],
+          Array [
+            "eg",
+            "Egypt",
+          ],
+          Array [
+            "sv",
+            "El Salvador",
+          ],
+          Array [
+            "gq",
+            "Equatorial Guinea",
+          ],
+          Array [
+            "er",
+            "Eritrea",
+          ],
+          Array [
+            "ee",
+            "Estonia",
+          ],
+          Array [
+            "sz",
+            "Eswatini",
+          ],
+          Array [
+            "et",
+            "Ethiopia",
+          ],
+          Array [
+            "fk",
+            "Falkland Islands (Malvinas)",
+          ],
+          Array [
+            "fo",
+            "Faroe Islands",
+          ],
+          Array [
+            "fj",
+            "Fiji",
+          ],
+          Array [
+            "fi",
+            "Finland",
+          ],
+          Array [
+            "fr",
+            "France",
+          ],
+          Array [
+            "gf",
+            "French Guiana",
+          ],
+          Array [
+            "pf",
+            "French Polynesia",
+          ],
+          Array [
+            "tf",
+            "French Southern Territories",
+          ],
+          Array [
+            "ga",
+            "Gabon",
+          ],
+          Array [
+            "gm",
+            "Gambia",
+          ],
+          Array [
+            "ge",
+            "Georgia",
+          ],
+          Array [
+            "de",
+            "Germany",
+          ],
+          Array [
+            "gh",
+            "Ghana",
+          ],
+          Array [
+            "gi",
+            "Gibraltar",
+          ],
+          Array [
+            "gr",
+            "Greece",
+          ],
+          Array [
+            "gl",
+            "Greenland",
+          ],
+          Array [
+            "gd",
+            "Grenada",
+          ],
+          Array [
+            "gp",
+            "Guadeloupe",
+          ],
+          Array [
+            "gu",
+            "Guam",
+          ],
+          Array [
+            "gt",
+            "Guatemala",
+          ],
+          Array [
+            "gg",
+            "Guernsey",
+          ],
+          Array [
+            "gn",
+            "Guinea",
+          ],
+          Array [
+            "gw",
+            "Guinea-Bissau",
+          ],
+          Array [
+            "gy",
+            "Guyana",
+          ],
+          Array [
+            "ht",
+            "Haiti",
+          ],
+          Array [
+            "hm",
+            "Heard Island and McDonald Islands",
+          ],
+          Array [
+            "va",
+            "Holy See",
+          ],
+          Array [
+            "hn",
+            "Honduras",
+          ],
+          Array [
+            "hk",
+            "Hong Kong",
+          ],
+          Array [
+            "hu",
+            "Hungary",
+          ],
+          Array [
+            "is",
+            "Iceland",
+          ],
+          Array [
+            "in",
+            "India",
+          ],
+          Array [
+            "id",
+            "Indonesia",
+          ],
+          Array [
+            "ir",
+            "Iran, Islamic Republic of",
+          ],
+          Array [
+            "iq",
+            "Iraq",
+          ],
+          Array [
+            "ie",
+            "Ireland",
+          ],
+          Array [
+            "im",
+            "Isle of Man",
+          ],
+          Array [
+            "il",
+            "Israel",
+          ],
+          Array [
+            "it",
+            "Italy",
+          ],
+          Array [
+            "jm",
+            "Jamaica",
+          ],
+          Array [
+            "jp",
+            "Japan",
+          ],
+          Array [
+            "je",
+            "Jersey",
+          ],
+          Array [
+            "jo",
+            "Jordan",
+          ],
+          Array [
+            "kz",
+            "Kazakhstan",
+          ],
+          Array [
+            "ke",
+            "Kenya",
+          ],
+          Array [
+            "ki",
+            "Kiribati",
+          ],
+          Array [
+            "kp",
+            "Korea, Democratic People's Republic of",
+          ],
+          Array [
+            "kr",
+            "Korea, Republic of",
+          ],
+          Array [
+            "kw",
+            "Kuwait",
+          ],
+          Array [
+            "kg",
+            "Kyrgyzstan",
+          ],
+          Array [
+            "la",
+            "Lao People's Democratic Republic",
+          ],
+          Array [
+            "lv",
+            "Latvia",
+          ],
+          Array [
+            "lb",
+            "Lebanon",
+          ],
+          Array [
+            "ls",
+            "Lesotho",
+          ],
+          Array [
+            "lr",
+            "Liberia",
+          ],
+          Array [
+            "ly",
+            "Libya",
+          ],
+          Array [
+            "li",
+            "Liechtenstein",
+          ],
+          Array [
+            "lt",
+            "Lithuania",
+          ],
+          Array [
+            "lu",
+            "Luxembourg",
+          ],
+          Array [
+            "mo",
+            "Macao",
+          ],
+          Array [
+            "mg",
+            "Madagascar",
+          ],
+          Array [
+            "mw",
+            "Malawi",
+          ],
+          Array [
+            "my",
+            "Malaysia",
+          ],
+          Array [
+            "mv",
+            "Maldives",
+          ],
+          Array [
+            "ml",
+            "Mali",
+          ],
+          Array [
+            "mt",
+            "Malta",
+          ],
+          Array [
+            "mh",
+            "Marshall Islands",
+          ],
+          Array [
+            "mq",
+            "Martinique",
+          ],
+          Array [
+            "mr",
+            "Mauritania",
+          ],
+          Array [
+            "mu",
+            "Mauritius",
+          ],
+          Array [
+            "yt",
+            "Mayotte",
+          ],
+          Array [
+            "mx",
+            "Mexico",
+          ],
+          Array [
+            "fm",
+            "Micronesia, Federated States of",
+          ],
+          Array [
+            "md",
+            "Moldova, Republic of",
+          ],
+          Array [
+            "mc",
+            "Monaco",
+          ],
+          Array [
+            "mn",
+            "Mongolia",
+          ],
+          Array [
+            "me",
+            "Montenegro",
+          ],
+          Array [
+            "ms",
+            "Montserrat",
+          ],
+          Array [
+            "ma",
+            "Morocco",
+          ],
+          Array [
+            "mz",
+            "Mozambique",
+          ],
+          Array [
+            "mm",
+            "Myanmar",
+          ],
+          Array [
+            "na",
+            "Namibia",
+          ],
+          Array [
+            "nr",
+            "Nauru",
+          ],
+          Array [
+            "np",
+            "Nepal",
+          ],
+          Array [
+            "nl",
+            "Netherlands",
+          ],
+          Array [
+            "nc",
+            "New Caledonia",
+          ],
+          Array [
+            "nz",
+            "New Zealand",
+          ],
+          Array [
+            "ni",
+            "Nicaragua",
+          ],
+          Array [
+            "ne",
+            "Niger",
+          ],
+          Array [
+            "ng",
+            "Nigeria",
+          ],
+          Array [
+            "nu",
+            "Niue",
+          ],
+          Array [
+            "nf",
+            "Norfolk Island",
+          ],
+          Array [
+            "mk",
+            "North Macedonia",
+          ],
+          Array [
+            "mp",
+            "Northern Mariana Islands",
+          ],
+          Array [
+            "no",
+            "Norway",
+          ],
+          Array [
+            "om",
+            "Oman",
+          ],
+          Array [
+            "pk",
+            "Pakistan",
+          ],
+          Array [
+            "pw",
+            "Palau",
+          ],
+          Array [
+            "ps",
+            "Palestine, State of",
+          ],
+          Array [
+            "pa",
+            "Panama",
+          ],
+          Array [
+            "pg",
+            "Papua New Guinea",
+          ],
+          Array [
+            "py",
+            "Paraguay",
+          ],
+          Array [
+            "pe",
+            "Peru",
+          ],
+          Array [
+            "ph",
+            "Philippines",
+          ],
+          Array [
+            "pn",
+            "Pitcairn",
+          ],
+          Array [
+            "pl",
+            "Poland",
+          ],
+          Array [
+            "pt",
+            "Portugal",
+          ],
+          Array [
+            "pr",
+            "Puerto Rico",
+          ],
+          Array [
+            "qa",
+            "Qatar",
+          ],
+          Array [
+            "ro",
+            "Romania",
+          ],
+          Array [
+            "ru",
+            "Russia",
+          ],
+          Array [
+            "rw",
+            "Rwanda",
+          ],
+          Array [
+            "re",
+            "Réunion",
+          ],
+          Array [
+            "bl",
+            "Saint Barthélemy",
+          ],
+          Array [
+            "sh",
+            "Saint Helena, Ascension and Tristan da Cunha",
+          ],
+          Array [
+            "kn",
+            "Saint Kitts and Nevis",
+          ],
+          Array [
+            "lc",
+            "Saint Lucia",
+          ],
+          Array [
+            "mf",
+            "Saint Martin, (French part)",
+          ],
+          Array [
+            "pm",
+            "Saint Pierre and Miquelon",
+          ],
+          Array [
+            "vc",
+            "Saint Vincent and the Grenadines",
+          ],
+          Array [
+            "ws",
+            "Samoa",
+          ],
+          Array [
+            "sm",
+            "San Marino",
+          ],
+          Array [
+            "st",
+            "Sao Tome and Principe",
+          ],
+          Array [
+            "sa",
+            "Saudi Arabia",
+          ],
+          Array [
+            "sn",
+            "Senegal",
+          ],
+          Array [
+            "rs",
+            "Serbia",
+          ],
+          Array [
+            "sc",
+            "Seychelles",
+          ],
+          Array [
+            "sl",
+            "Sierra Leone",
+          ],
+          Array [
+            "sg",
+            "Singapore",
+          ],
+          Array [
+            "sx",
+            "Sint Maarten, (Dutch part)",
+          ],
+          Array [
+            "sk",
+            "Slovakia",
+          ],
+          Array [
+            "si",
+            "Slovenia",
+          ],
+          Array [
+            "sb",
+            "Solomon Islands",
+          ],
+          Array [
+            "so",
+            "Somalia",
+          ],
+          Array [
+            "za",
+            "South Africa",
+          ],
+          Array [
+            "gs",
+            "South Georgia and the South Sandwich Islands",
+          ],
+          Array [
+            "ss",
+            "South Sudan",
+          ],
+          Array [
+            "es",
+            "Spain",
+          ],
+          Array [
+            "lk",
+            "Sri Lanka",
+          ],
+          Array [
+            "sd",
+            "Sudan",
+          ],
+          Array [
+            "sr",
+            "Suriname",
+          ],
+          Array [
+            "sj",
+            "Svalbard and Jan Mayen",
+          ],
+          Array [
+            "se",
+            "Sweden",
+          ],
+          Array [
+            "ch",
+            "Switzerland",
+          ],
+          Array [
+            "sy",
+            "Syrian Arab Republic",
+          ],
+          Array [
+            "tw",
+            "Taiwan, Province of China",
+          ],
+          Array [
+            "tj",
+            "Tajikistan",
+          ],
+          Array [
+            "tz",
+            "Tanzania, United Republic of",
+          ],
+          Array [
+            "th",
+            "Thailand",
+          ],
+          Array [
+            "tl",
+            "Timor-Leste",
+          ],
+          Array [
+            "tg",
+            "Togo",
+          ],
+          Array [
+            "tk",
+            "Tokelau",
+          ],
+          Array [
+            "to",
+            "Tonga",
+          ],
+          Array [
+            "tt",
+            "Trinidad and Tobago",
+          ],
+          Array [
+            "tn",
+            "Tunisia",
+          ],
+          Array [
+            "tr",
+            "Turkey",
+          ],
+          Array [
+            "tm",
+            "Turkmenistan",
+          ],
+          Array [
+            "tc",
+            "Turks and Caicos Islands",
+          ],
+          Array [
+            "tv",
+            "Tuvalu",
+          ],
+          Array [
+            "ug",
+            "Uganda",
+          ],
+          Array [
+            "ua",
+            "Ukraine",
+          ],
+          Array [
+            "ae",
+            "United Arab Emirates",
+          ],
+          Array [
+            "gb",
+            "United Kingdom of Great Britain and Northern Ireland",
+          ],
+          Array [
+            "um",
+            "United States Minor Outlying Islands",
+          ],
+          Array [
+            "us",
+            "United States of America",
+          ],
+          Array [
+            "uy",
+            "Uruguay",
+          ],
+          Array [
+            "uz",
+            "Uzbekistan",
+          ],
+          Array [
+            "vu",
+            "Vanuatu",
+          ],
+          Array [
+            "ve",
+            "Venezuela, Bolivarian Republic of",
+          ],
+          Array [
+            "vn",
+            "Viet Nam",
+          ],
+          Array [
+            "vg",
+            "Virgin Islands, British",
+          ],
+          Array [
+            "vi",
+            "Virgin Islands, U.S.",
+          ],
+          Array [
+            "wf",
+            "Wallis and Futuna",
+          ],
+          Array [
+            "eh",
+            "Western Sahara",
+          ],
+          Array [
+            "ye",
+            "Yemen",
+          ],
+          Array [
+            "zm",
+            "Zambia",
+          ],
+          Array [
+            "zw",
+            "Zimbabwe",
+          ],
+          Array [
+            "ax",
+            "Åland Islands",
+          ],
+        ]
+      }
+      placeholder="Country"
+      value="Russia"
+    />
+    <OrderInput
+      areErrorsVisible={false}
+      autofocus={false}
+      errors={Object {}}
+      handleInput={[Function]}
+      inputMode="numeric"
+      maxLength={null}
+      name="zip"
+      placeholder="ZIP"
+      type="text"
+      value="123456"
+    />
+  </div>
+  <div
+    className="order-info__continue"
+    onClick={[Function]}
+  >
+    Continue
+  </div>
+</form>
+`;
