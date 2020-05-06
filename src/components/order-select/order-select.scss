@@ -2,7 +2,7 @@
 
 .order-select {
   position: relative;
-  flex: 1;
+  flex-grow: 1;
 
   &.is-open .order-select__input {
     border-radius: 0 0 5px 5px;

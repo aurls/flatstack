@@ -59,6 +59,10 @@
   .order-input[name="zip"] {
     width: 115px;
     margin-left: 10px;
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 80px;
+    }
   }
 }
 
@@ -66,6 +70,10 @@
   .order-input[name="zip"] {
     width: 115px;
     margin-left: 10px;
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      width: 80px;
+    }
   }
 }
 

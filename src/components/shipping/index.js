@@ -15,7 +15,8 @@ class Shipping extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      areErrorsVisible: false
+      areErrorsVisible: false,
+      areErrorMessageVisible: false
     };
     this.location = new Location();
     this.getLocation = this.getLocation.bind(this);

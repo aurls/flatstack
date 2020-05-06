@@ -2,7 +2,7 @@ import actionTypes from '../constants/actionTypes';
 import stages from '../constants/stages';
 
 export const initialState = {
-  stage: stages.SHIPPING,
+  stage: stages.PAYMENT,
   shipping: {
     name: '',
     phone: '',

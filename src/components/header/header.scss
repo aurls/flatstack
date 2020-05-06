@@ -16,11 +16,18 @@
   align-items: flex-start;
   margin: 0 auto;
   padding: 12px 0;
-  max-width: 700px;
+  max-width: $maxWidth;
+
+  @media screen and (max-width: $tabletBreakpoint) {
+    max-width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 }
 
 .header__title {
   display: flex;
+  max-width: 100%;
 }
 
 .header__title-logo {
@@ -30,7 +37,11 @@
 }
 
 .header__title-text {
+  width: 100%;
+  overflow: hidden;
   font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #5a1094;
 }
 
@@ -40,6 +51,10 @@
   position: relative;
   margin-top: 3px;
   margin-left: 10px;
+
+  @media screen and (max-width: $mobileBreakpoint) {
+    display: none;
+  }
 }
 
 .header__cart-title {
@@ -70,12 +85,5 @@
     position: absolute;
     top: 1px;
     right: 4px;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .header__container {
-    padding-right: 40px;
-    padding-left: 40px;
   }
 }
