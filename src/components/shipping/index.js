@@ -103,7 +103,6 @@ class Shipping extends React.Component {
           name="name"
           placeholder="Full Name"
           value={shipping.name}
-          autofocus
           handleInput={this.handleInput}
           errors={shipping.errors}
           areErrorsVisible={areErrorsVisible} />

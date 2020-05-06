@@ -41,14 +41,13 @@ class OrderInput extends React.Component {
       value,
       inputMode,
       maxLength,
+      autofocus,
       errors,
       areErrorsVisible,
       handleInput
     } = this.props;
     const { areErrorMessageVisible } = this.state;
     const error = errors[name];
-    const areErrorFirstInForm = Object.keys(errors)[0] === name;
-    const autofocus = this.props.autofocus || areErrorFirstInForm;
     const inputStyle = cn(
       'order-input',
       { 'is-invalid': error && areErrorsVisible }

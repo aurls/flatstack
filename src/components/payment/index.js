@@ -125,7 +125,6 @@ class Payment extends React.Component {
           name="cardholder"
           placeholder="Name as it appears on your card"
           value={payment.cardholder}
-          autofocus
           handleInput={this.handleInput}
           errors={payment.errors}
           areErrorsVisible={areErrorsVisible} />

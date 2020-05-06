@@ -122,7 +122,6 @@ class Billing extends React.Component {
           name="name"
           placeholder="Full Name"
           value={billing.name}
-          autofocus
           handleInput={this.handleInput}
           errors={billing.errors}
           areErrorsVisible={areErrorsVisible} />
