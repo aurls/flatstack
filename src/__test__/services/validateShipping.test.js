@@ -1,5 +1,5 @@
-import validateShipping from './validateShipping';
-import errorMessages from '../constants/errorMessages';
+import validateShipping from '../../services/validateShipping';
+import errorMessages from '../../constants/errorMessages';
 
 describe('Validate shipping', () => {
   test('Empty values', () => {

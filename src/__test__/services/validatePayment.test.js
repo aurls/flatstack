@@ -1,5 +1,5 @@
-import validatePayment from './validatePayment';
-import errorMessages from '../constants/errorMessages';
+import validatePayment from '../../services/validatePayment';
+import errorMessages from '../../constants/errorMessages';
 
 describe('Validate payment', () => {
   test('Empty values', () => {

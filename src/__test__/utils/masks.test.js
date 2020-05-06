@@ -1,4 +1,4 @@
-import { getCardNumberMask, getExpireDateMask } from './masks';
+import { getCardNumberMask, getExpireDateMask } from '../../utils/masks';
 
 describe('Masks', () => {
   describe('Card number mask', () => {

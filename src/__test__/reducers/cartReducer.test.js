@@ -1,5 +1,5 @@
-import cartReducer, { initialState } from './cartReducer';
-import actionTypes from '../constants/actionTypes';
+import cartReducer, { initialState } from '../../reducers/cartReducer';
+import actionTypes from '../../constants/actionTypes';
 
 describe('Cart reducer', () => {
   test('Add items to cart', () => {

@@ -1,6 +1,6 @@
-import * as orderActions from './orderActions';
-import actionTypes from '../constants/actionTypes';
-import stages from '../constants/stages';
+import * as orderActions from '../../actions/orderActions';
+import actionTypes from '../../constants/actionTypes';
+import stages from '../../constants/stages';
 
 describe('Order actions', () => {
   test('Set order stage', () => {

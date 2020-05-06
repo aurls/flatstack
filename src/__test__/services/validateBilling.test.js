@@ -1,5 +1,5 @@
-import validateBilling from './validateBilling';
-import errorMessages from '../constants/errorMessages';
+import validateBilling from '../../services/validateBilling';
+import errorMessages from '../../constants/errorMessages';
 
 describe('Validate billing', () => {
   test('Empty values', () => {

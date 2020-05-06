@@ -1,6 +1,6 @@
-import orderReducer, { initialState } from './orderReducer';
-import actionTypes from '../constants/actionTypes';
-import stages from '../constants/stages';
+import orderReducer, { initialState } from '../../reducers/orderReducer';
+import actionTypes from '../../constants/actionTypes';
+import stages from '../../constants/stages';
 
 describe('Order reducer', () => {
   test('Set order stage', () => {

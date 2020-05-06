@@ -1,5 +1,5 @@
-import * as cartActions from './cartActions';
-import actionTypes from '../constants/actionTypes';
+import * as cartActions from '../../actions/cartActions';
+import actionTypes from '../../constants/actionTypes';
 
 describe('Cart actions', () => {
   test('Add items to cart', () => {
