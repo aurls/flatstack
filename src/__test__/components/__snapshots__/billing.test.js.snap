@@ -30,7 +30,7 @@ exports[`Billing component Default state 1`] = `
   </h3>
   <OrderInput
     areErrorsVisible={false}
-    autofocus={true}
+    autofocus={false}
     errors={Object {}}
     handleInput={[Function]}
     inputMode="text"
