@@ -24,4 +24,14 @@
     border-bottom: 1px solid #dedcdc;
     transform: rotate(45deg);
   }
+
+  &.is-right {
+    transform-origin: right;
+    transform: translate(-80px, -28px);
+
+    &::after {
+      right: 22px;
+      left: auto;
+    }
+  }
 }

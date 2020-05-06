@@ -4,7 +4,7 @@ class Location {
   }
 
   async get () {
-    const response = await window.fetch(this._url);
+    const response = await fetch(this._url);
     if (!response.ok) {
       return new Error();
     }

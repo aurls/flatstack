@@ -16,24 +16,21 @@ class OrderInput extends React.Component {
     this.handleBlur = this.handleBlur.bind(this);
   }
 
-  shouldComponentUpdate (nextProps) {
-    return !isEqual(this.props, nextProps);
+  shouldComponentUpdate (nextProps, nextState) {
+    return !isEqual(this.props, nextProps &&
+      isEqual(this.state, nextState));
   }
 
   handleFocus () {
-    if (!this.state.areErrorMessageVisible) {
-      this.setState({
-        areErrorMessageVisible: true
-      });
-    }
+    this.setState({
+      areErrorMessageVisible: true
+    });
   }
 
   handleBlur () {
-    if (this.state.areErrorMessageVisible) {
-      this.setState({
-        areErrorMessageVisible: false
-      });
-    }
+    this.setState({
+      areErrorMessageVisible: false
+    });
   }
 
   render () {
@@ -48,6 +45,7 @@ class OrderInput extends React.Component {
       areErrorsVisible,
       handleInput
     } = this.props;
+    const { areErrorMessageVisible } = this.state;
     const error = errors[name];
     const areErrorFirstInForm = Object.keys(errors)[0] === name;
     const autofocus = this.props.autofocus || areErrorFirstInForm;
@@ -59,7 +57,7 @@ class OrderInput extends React.Component {
     return (
       <div className="order-input__container">
         {
-          error && areErrorsVisible && areErrorFirstInForm &&
+          error && areErrorsVisible && areErrorMessageVisible &&
           <OrderErrorMessage error={error} />
         }
 
